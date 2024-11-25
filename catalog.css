@@ -1,0 +1,179 @@
+/* General */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: url(../market-parral/img/WhatsApp_Image_2024-11-13_at_15.20.54-removebg-preview.png);
+  background-size: cover;
+  background-position: center;
+  color: white;
+  overflow: hidden; /* Evita desplazamiento innecesario */
+}
+
+/* Contenedor principal */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: relative; /* Necesario para posicionar correctamente */
+}
+
+/* Estilo del libro (catálogo) */
+.book {
+  position: relative;
+  width: 500px;
+  height: 500px; /* Tamaño consistente */
+  perspective: 1500px;
+  margin: 0 auto; /* Centrado horizontal */
+}
+
+/* Estilo para las páginas */
+.page {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: left;
+  background: rgba(255, 255, 255, 0.9); /* Fondo semitransparente */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  backface-visibility: hidden;
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.6s ease, z-index 0.3s ease;
+}
+
+/* Estilo para la portada */
+.front-page {
+  z-index: 4;
+  background: linear-gradient(-45deg, #04fac5, #6DD5FA, #02f879);
+  background-size: 400% 400%;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 15px;
+  height: 100%; /* Ocupa toda la pantalla */
+  animation: backgroundAnimation 10s ease infinite;
+  padding: 20px; 
+}
+
+/* Animación para el fondo */
+@keyframes backgroundAnimation {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+/* Ajuste de texto en la portada */
+.front-page h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.front-page p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  font-weight: lighter;
+  opacity: 0.9;
+}
+
+/* Estilo para la imagen del logo */
+.logo-img {
+  max-width: 150px; /* Tamaño más controlado */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  margin: 15px auto 0;
+}
+
+/* Animación en la imagen */
+.front-page img:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Páginas laterales */
+.page-left,
+.page-right {
+  transform: rotateY(-180deg);
+  color: black;
+}
+
+/* Botones laterales */
+.arrow-buttons {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.arrow-buttons button {
+  pointer-events: all;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.arrow-buttons button:hover {
+  background-color: rgba(26, 235, 200, 0.8);
+}
+
+.arrow-buttons button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+/* Catálogo centrado y con espaciado ajustado */
+.page h1, .page p {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.page img {
+  display: block;
+  margin: 10px auto;
+  max-width: 90%;
+  height: auto;
+}
+
+/* Corrección de márgenes en todo el catálogo */
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra el contenido verticalmente */
+  align-items: center; /* Centra el contenido horizontalmente */
+  padding: 20px; /* Espaciado interno uniforme */
+}
