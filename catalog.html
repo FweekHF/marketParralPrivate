@@ -3,33 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="catalog.css">
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <title>Market Parral</title>
 </head>
 <body>
     <div class="container">
         <div class="book">
-          <div class="page front-page">
-            <h1>Catálogo</h1>
-            <p>Bienvenido a nuestro catálogo interactivo</p>
-            <img class="logo-img" src="/img/logo.png" alt="Logo">
-          </div>
-          <div class="page page-left">
-            <h1>Producto 1</h1>
-          </div>
-          <div class="page page-right">
-            <h1>Producto 2</h1>
-              
-          </div>
+            <div class="page front-page">
+                <h1>Catálogo</h1>
+                <p>Bienvenido a nuestro catálogo interactivo</p>
+                <img class="logo-img" src="/img/logo.png" alt="Logo">
+            </div>
+            <div class="page page-left">
+                <h1>Producto 1</h1>
+                <p>Descripción: Este es el producto 1, perfecto para tus necesidades diarias.</p>
+                <p>Precio: $100</p>
+                <label for="quantity-1">Cantidad:</label>
+                <input type="number" id="quantity-1" min="1" value="1">
+                <button onclick="addToCart('Producto 1', 100, 'quantity-1')">Agregar al carrito</button>
+            </div>
+            <div class="page page-right">
+                <h1>Producto 2</h1>
+                <p>Descripción: Este es el producto 2, ideal para regalar.</p>
+                <p>Precio: $150</p>
+                <label for="quantity-2">Cantidad:</label>
+                <input type="number" id="quantity-2" min="1" value="1">
+                <button onclick="addToCart('Producto 2', 150, 'quantity-2')">Agregar al carrito</button>
+            </div>
+            <div class="page page-left">
+                <h1>Producto 3</h1>
+                <p>Descripción: Este es el producto 3, duradero y confiable.</p>
+                <p>Precio: $200</p>
+                <label for="quantity-3">Cantidad:</label>
+                <input type="number" id="quantity-3" min="1" value="1">
+                <button onclick="addToCart('Producto 3', 200, 'quantity-3')">Agregar al carrito</button>
+            </div>
+            <div class="page page-right">
+                <h1>Producto 4</h1>
+                <p>Descripción: Este es el producto 4, el complemento perfecto para tu hogar.</p>
+                <p>Precio: $250</p>
+                <label for="quantity-4">Cantidad:</label>
+                <input type="number" id="quantity-4" min="1" value="1">
+                <button onclick="addToCart('Producto 4', 250, 'quantity-4')">Agregar al carrito</button>
+            </div>
         </div>
-      
         <div class="arrow-buttons">
-          <button id="prev-button">&#9664;</button>
-          <button id="next-button">&#9654;</button>
+            <button id="prev-button">&#9664;</button>
+            <button id="next-button">&#9654;</button>
         </div>
-      </div>
-      
-      <script src="catalog.js"></script>
+    </div>
+    
+    <script>
+        function addToCart(productName, price, quantityId) {
+            const quantity = document.getElementById(quantityId).value;
+            alert(`Agregado al carrito: ${productName} - Cantidad: ${quantity} - Precio total: $${price * quantity}`);
+        }
+    </script>
+    <script src="index.js"></script>
 </body>
 </html>
