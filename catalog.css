@@ -59,7 +59,7 @@ body {
 /* Estilo para la portada */
 .front-page {
   z-index: 4;
-  background: linear-gradient(-45deg, #0f3892, #01f8ba);
+  background: linear-gradient(-45deg, #fdffff, #01f8ba);
   color: rgb(51, 48, 48);
   text-align: center;
   display: flex;
