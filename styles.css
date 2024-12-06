@@ -185,3 +185,43 @@ nav a:hover{
 .slider-nav a:hover{
     opacity: 1;
 }
+.social-bar {
+    width: 100vw; /* Ocupa exactamente el ancho de la ventana */
+    background-color: blue; /* Mismo color que el footer */
+    padding: 10px 0; /* Elimina padding horizontal extra */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Sombra para separación */
+    position: relative;
+    overflow-x: hidden; /* Evita cualquier desbordamiento horizontal */
+}
+
+.social-bar .social-icon {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.social-bar .icon-elem {
+    list-style: none;
+}
+
+.social-bar .icon {
+    color: white;
+    font-size: 20px; /* Ajustado para pantallas pequeñas */
+    margin: 0 10px;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.social-bar .icon:hover {
+    transform: translateY(-5px);
+    color: #ffffff; /* Mismo color blanco */
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Elimina el desplazamiento horizontal */
+    box-sizing: border-box; /* Asegura un cálculo correcto del ancho */
+}
